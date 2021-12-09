@@ -1,13 +1,25 @@
 package com.mns.bank.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mns.bank.bean.AppException;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "account")
 public class Account {
-	
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long num;
+
 	private String label;
 	private Double solde;
 	private Double overdraftAllowed;
+
+	@JsonIgnore
+	@ManyToOne
+	@JoinColumn(name = "num_client")
 	private Client client;
 	
 	public Account(String label, Double solde, Double overdraftAllowed, Client client) {

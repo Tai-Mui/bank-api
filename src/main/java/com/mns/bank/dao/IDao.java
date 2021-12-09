@@ -9,7 +9,7 @@ public interface IDao<T> {
     
     List<T> getAll();
     
-    int save(T t);
+    Long save(T t);
     
     void update(T t);
     

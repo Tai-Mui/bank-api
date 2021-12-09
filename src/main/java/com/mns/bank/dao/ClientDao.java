@@ -5,12 +5,15 @@ import java.util.Optional;
 
 import com.mns.bank.model.Client;
 
+import javax.persistence.EntityManager;
+
 public class ClientDao implements IDao<Client> {
+
+	private EntityManager entityManager;
 
 	@Override
 	public Optional<Client> get(long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return Optional.ofNullable(entityManager.find(Client.class, id));
 	}
 
 	@Override
@@ -20,9 +23,9 @@ public class ClientDao implements IDao<Client> {
 	}
 
 	@Override
-	public int save(Client t) {
+	public Long save(Client t) {
 		// TODO Auto-generated method stub
-		return 0;
+		return 0l;
 	}
 
 	@Override
@@ -35,6 +38,10 @@ public class ClientDao implements IDao<Client> {
 	public void delete(Client t) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public Client getByEmail(String email) {
+
 	}
 
 }

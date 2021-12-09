@@ -1,13 +1,21 @@
 package com.mns.bank.model;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "client")
 public class Client {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long num;
+
 	private String name;
 	private String email;
 	private String password;
+
+	@OneToMany(mappedBy = "client")
 	private List<Account> accounts;
 	
 	public Client(String name, String email, String password) {

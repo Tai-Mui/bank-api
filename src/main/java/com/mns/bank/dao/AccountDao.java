@@ -20,9 +20,9 @@ public class AccountDao implements IDao<Account> {
 	}
 
 	@Override
-	public int save(Account t) {
+	public Long save(Account t) {
 		// TODO Auto-generated method stub
-		return 0;
+		return 0l;
 	}
 
 	@Override
