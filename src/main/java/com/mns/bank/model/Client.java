@@ -9,7 +9,7 @@ public class Client {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long num;
+	private Long numClient;
 
 	private String name;
 	private String email;
@@ -17,7 +17,10 @@ public class Client {
 
 	@OneToMany(mappedBy = "client")
 	private List<Account> accounts;
-	
+
+	public Client() {
+	}
+
 	public Client(String name, String email, String password) {
 		super();
 		this.name = name;
@@ -25,12 +28,12 @@ public class Client {
 		this.password = password;
 	}
 
-	public Long getNum() {
-		return num;
+	public Long getNumClient() {
+		return numClient;
 	}
 
-	public void setNum(Long num) {
-		this.num = num;
+	public void setNumClient(Long numClient) {
+		this.numClient = numClient;
 	}
 
 	public String getName() {

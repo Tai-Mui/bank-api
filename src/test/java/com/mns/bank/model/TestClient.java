@@ -17,14 +17,14 @@ public class TestClient {
 	}
 	
 	@Test
-	public void testGetNum() {
-		Assert.assertNull(client.getNum());
+	public void testGetNumClient() {
+		Assert.assertNull(client.getNumClient());
 	}
 	
 	@Test
-	public void testSetNum() {
-		client.setNum(99l);
-		Assert.assertEquals(99l, (long) client.getNum());
+	public void testSetNumClient() {
+		client.setNumClient(99l);
+		Assert.assertEquals(99l, (long) client.getNumClient());
 	}
 
 	@Test

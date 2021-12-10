@@ -17,14 +17,14 @@ public class TestAccount {
 	}
 	
 	@Test
-	public void testGetNum() {
-		Assert.assertNull(account.getNum());
+	public void testGetNumAccount() {
+		Assert.assertNull(account.getNumAccount());
 	}
 	
 	@Test
-	public void testSetNum() {
-		account.setNum(99l);
-		Assert.assertEquals(99l, (long) account.getNum());
+	public void testSetNumAccountAccount() {
+		account.setNumAccount(99l);
+		Assert.assertEquals(99l, (long) account.getNumAccount());
 	}
 	
 	@Test

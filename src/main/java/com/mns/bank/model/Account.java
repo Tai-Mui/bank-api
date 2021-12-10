@@ -11,7 +11,7 @@ public class Account {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long num;
+	private Long numAccount;
 
 	private String label;
 	private Double solde;
@@ -21,7 +21,10 @@ public class Account {
 	@ManyToOne
 	@JoinColumn(name = "num_client")
 	private Client client;
-	
+
+	public Account() {
+	}
+
 	public Account(String label, Double solde, Double overdraftAllowed, Client client) {
 		super();
 		this.label = label;
@@ -30,12 +33,12 @@ public class Account {
 		this.client = client;
 	}
 
-	public Long getNum() {
-		return num;
+	public Long getNumAccount() {
+		return numAccount;
 	}
 
-	public void setNum(Long num) {
-		this.num = num;
+	public void setNumAccount(Long num) {
+		this.numAccount = num;
 	}
 
 	public String getLabel() {
@@ -81,7 +84,8 @@ public class Account {
 	public void withdrawal(double amount) throws AppException {
 		if (amount < 0) {
 			throw new AppException("Withdrawal illegal amount : " + amount);
-		} else if (solde + overdraftAllowed >= amount) {
+		}
+		if (solde + overdraftAllowed >= amount) {
 			solde -= amount;
 		} else {
 			throw new AppException("Withdrawal amount exceeds overdraft allowed !");
