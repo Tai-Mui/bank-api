@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.math.BigDecimal;
 import java.util.Optional;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/account")
 public class AccountController implements IController {
