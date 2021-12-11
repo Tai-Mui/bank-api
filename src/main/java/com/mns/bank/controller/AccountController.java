@@ -46,7 +46,6 @@ public class AccountController implements IController {
 
     @PostMapping("/withdraw/{id}")
     public ResponseEntity<Account> withdrawFromAccount(@RequestBody double amount, @PathVariable long id) {
-        System.out.println(amount);
         try {
             Optional<Account> optionalAccount = accountService.findByNumAccount(id);
             if (!optionalAccount.isPresent()) {
